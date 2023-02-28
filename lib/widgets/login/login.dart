@@ -53,7 +53,9 @@ class Login extends StatelessWidget {
 
 //PASWORD
   Widget _passwordTextField() {
-    return StreamBuilder(builder: (context, snapshot) {
+    return StreamBuilder(
+      
+      builder: ( _ , snapshot) {
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         child: TextField(
