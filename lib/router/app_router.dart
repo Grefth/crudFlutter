@@ -1,6 +1,5 @@
 import 'package:flutter_app/models/models.dart';
-import 'package:flutter_app/screens/programas/index_programas.dart';
-import 'package:flutter_app/widgets/login/login.dart';
+import 'package:flutter_app/screens/login/login.dart';
 
 import '../screens/screens.dart';
 
@@ -8,14 +7,13 @@ class AppRouter {
 
   static const inicialRoute  = 'login';
 
+  //DEFINICION DEL MENU DE LA APP
   static final menuOptions   = <MenuOption>[    
     MenuOption(route: 'login',  icon: Icons.credit_card,        nombre:'Login',       screen:  Login()),
     MenuOption(route: 'home',   icon: Icons.list,               nombre:'Home',        screen: const HomeScreen()),
     MenuOption(route: 'lista',  icon: Icons.list,               nombre:'Lista',       screen: const ListaScreen()),
     MenuOption(route: 'lista2', icon: Icons.list,               nombre:'Lista 2',     screen: const Lista2Screen()),
-    MenuOption(route: 'lista3', icon: Icons.list,               nombre:'Programas',   screen: const Programas()),
-    MenuOption(route: 'alert',  icon: Icons.dangerous_outlined, nombre:'Alert',       screen: const AlertScreen()),
-    MenuOption(route: 'card',   icon: Icons.credit_card,        nombre:'Card',        screen: const CardScreen()),
+    MenuOption(route: 'lista3', icon: Icons.list,               nombre:'Programas',   screen: const Programas()),    
     
   ];
 

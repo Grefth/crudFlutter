@@ -10,12 +10,15 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {        
     
     return Scaffold(
-      appBar: AppBar(        
+      appBar: AppBar(
+        elevation: 0,
         title: const Text('Home'),        
       ),
-      body: ListView.separated(
+      drawer: Drawer(
+        child: 
+        ListView.separated(
           itemCount: AppRouter.menuOptions.length,
-          itemBuilder: (context, index) => 
+          itemBuilder: (context, index) =>           
           ListTile(
             leading: Icon(AppRouter.menuOptions[index].icon),
             title: Text(AppRouter.menuOptions[index].nombre),
@@ -24,8 +27,9 @@ class HomeScreen extends StatelessWidget {
               Navigator.pushNamed(context, AppRouter.menuOptions[index].route);//navegacion con el nombre de la ruta
             },
           ),
-          separatorBuilder: (context, index) => const Divider(), 
+          separatorBuilder: (context, index) => const Divider(),
         ),
+      ),
     );
   }
 }

@@ -16,7 +16,7 @@ class Programas extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         children: const [
           CardClientes(),          
-          CardProgramas(),
+          CardProgramas(),          
         ],
       )
     );
