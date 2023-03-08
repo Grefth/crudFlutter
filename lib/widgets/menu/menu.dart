@@ -1,4 +1,6 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_app/themes/app_theme.dart';
+import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
  
 class MenuLateral {
  
@@ -31,6 +33,8 @@ class MenuLateral {
     // menu lateral
     return 
     Drawer(
+      
+      backgroundColor: AppTheme.appColor,
       child: Column(
         children: <Widget>[
           const UserAccountsDrawerHeader(
@@ -39,6 +43,9 @@ class MenuLateral {
         ],
       ),
     );
+
+
+
   }
   // this function modify the position on drawer
   // Author Ruben Gonzalez
