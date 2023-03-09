@@ -1,3 +1,6 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_app/BLoC/user/user_bloc.dart';
+
 import 'package:flutter_app/router/app_router.dart';
 import 'package:flutter_app/screens/screens.dart';
 import 'package:flutter_app/themes/app_theme.dart';
@@ -9,15 +12,22 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      
-      title: 'Welcome to Flutter',
-      home: const Lista2Screen(),
-      initialRoute: AppRouter.inicialRoute,
-      routes: AppRouter.getAppRoutes(),
-      onGenerateRoute: AppRouter.onGenerateRoute,
-      theme: AppTheme.lightTheme
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) => UserBloc(),
+        ),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        
+        title: 'Welcome to Flutter',
+        home: const Lista2Screen(),
+        initialRoute: AppRouter.inicialRoute,
+        routes: AppRouter.getAppRoutes(),
+        onGenerateRoute: AppRouter.onGenerateRoute,
+        theme: AppTheme.lightTheme
+      ),
     );
   }
 }
