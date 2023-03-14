@@ -1,5 +1,4 @@
 import 'package:flutter_app/models/models.dart';
-import 'package:flutter_app/screens/configuracion/index_configuracion.dart';
 import 'package:flutter_app/screens/login/login.dart';
 
 import '../screens/screens.dart';
@@ -34,7 +33,7 @@ class AppRouter {
     }
     return  appRoutes;
   }
-  
+
   // static Map<String, Widget Function(BuildContext)> routes = {
   //       'lista'   :(context) => const ListaScreen(),
   //       'lista2'  :(context) => const Lista2Screen(),
