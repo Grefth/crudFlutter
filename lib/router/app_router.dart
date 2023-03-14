@@ -34,10 +34,7 @@ class AppRouter {
     }
     return  appRoutes;
   }
-
-
-
-
+  
   // static Map<String, Widget Function(BuildContext)> routes = {
   //       'lista'   :(context) => const ListaScreen(),
   //       'lista2'  :(context) => const Lista2Screen(),
