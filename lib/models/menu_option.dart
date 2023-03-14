@@ -3,14 +3,14 @@ import 'package:flutter_app/screens/screens.dart';
 
 class MenuOption {
   final String    route;
-  final IconData  icon;
-  final String    nombre;
+  final IconData?  icon;
+  final String?    nombre;
   final Widget    screen;
 
   MenuOption({
      required this.route,
-     required this.icon,
-     required this.nombre,
+      this.icon,
+      this.nombre,
      required this.screen
   });
 

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/themes/app_theme.dart';
-import 'package:hidden_drawer_menu/hidden_drawer_menu.dart';
  
 class MenuLateral {
  

@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/services/notifications_services.dart';
 import 'package:flutter_app/themes/app_theme.dart';
 
 class Login extends StatelessWidget {
-  Login({super.key});
+
+  late final LocalNotifiactionService service;
+  Login({super.key}){
+    service = LocalNotifiactionService();
+    service.initialize();
+  }
 
   //VARIABLES DE LOGIN
   final user = TextEditingController();
@@ -25,6 +31,8 @@ class Login extends StatelessWidget {
           _passwordTextField(),
           const SizedBox(height: 20),
           _buttonLogin(),
+          const SizedBox(height: 20),
+          _buttonContinue()
         ],
       )),
     ));
@@ -105,11 +113,34 @@ class Login extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 80, vertical: 10),
           child: const Text('INICIAR SESIÓN'),
         ),
-        onPressed: () {
+        onPressed:  () async {
           //PODEMOS USAR  UN  SERVICIO DE DONDE VAMOS A VALIDAR EL USUARIO
           if (user.text == 'rumeles@live.com.mx' && password.text == '123456') {
-            Navigator.popAndPushNamed(context, 'Home');
+            Navigator.pushReplacementNamed(context, 'Home');
+            
+            
+          }else {
+
+            await service.mostrarNotificacion();
           }
+        },
+      );
+    });
+  }
+
+
+  //This button continued with the app without any users 
+  Widget _buttonContinue() {
+    return StreamBuilder(
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+      return ElevatedButton(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 67, vertical: 10),
+          child: const Text('Continuar sin cuenta'),
+        ),
+        onPressed: () {
+          //PODEMOS USAR  UN  SERVICIO DE DONDE VAMOS A VALIDAR EL USUARIO
+          Navigator.pushReplacementNamed(context, 'home');
         },
       );
     });
